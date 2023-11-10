@@ -3,7 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import test, auth, lectures, users
+from routers import test, auth, lectures, users, reviews
 
 app = FastAPI()
 
@@ -12,6 +12,7 @@ app.include_router(test.router)
 app.include_router(auth.router)
 app.include_router(lectures.router)
 app.include_router(users.router)
+app.include_router(reviews.router)
 
 # CORS 설정
 origins = [

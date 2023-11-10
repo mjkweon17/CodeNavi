@@ -56,7 +56,7 @@
 
   <tr>
     <th align="center">Backend, CI/CD</th>
-    <th align="center">Web Crawling, Data Managing</th>
+    <th align="center">Backend, Data Managing</th>
     <th align="center">Frontend</th>
     <th align="center">Frontend</th>
   </tr>

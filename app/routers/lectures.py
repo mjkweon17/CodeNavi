@@ -226,6 +226,7 @@ async def get_lecture(lecture_id: int, db: Session = Depends(get_db)):
 
     # rating은 reviews의 star의 평균
 
+    total_star = 0
     for review in reviews:
         total_star += review.star
         total_star = 0

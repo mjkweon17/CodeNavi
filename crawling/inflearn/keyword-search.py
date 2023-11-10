@@ -73,5 +73,13 @@ result = keyword_search(keywords)
 print(result)
 
 
+if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+  
+json_file_path = os.path.join("./", "inflearn_data12.json")
 
+with open(json_file_path, 'w', encoding='utf-8') as json_file:
+  json.dump(result, json_file)
+
+print("함수 결과를 파일로 저장했습니다.")
 

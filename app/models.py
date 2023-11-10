@@ -14,8 +14,8 @@ class User(Base):
     password = Column(String(255), nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
     created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
-    github_id = Column(String(255), nullable=False)
-    blog_link = Column(String(255), nullable=False)
+    github_id = Column(String(255), nullable=True)
+    blog_link = Column(String(255), nullable=True)
 
 class Company(Base):
     __tablename__ = 'HKCompany'

@@ -17,16 +17,16 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 class User(BaseModel):
     user_name: str
-    email: str
+    email: str | None = None
     password: str
-    github_id: str | None
-    blog_link: str | None
+    github_id: str | None = None
+    blog_link: str | None = None
 
 class UserInDB(User):
     user_name: str
-    email: str
-    github_id: str | None
-    blog_link: str | None
+    email: str | None = None
+    github_id: str | None = None
+    blog_link: str | None = None
 
 class UserInDB(User):
     hashed_password: str
@@ -37,9 +37,8 @@ class UserInDB(User):
 async def register_user(user: User, db: Session = Depends(get_db)):
     if db.query(HKUser).filter(HKUser.user_name == user.user_name).first():
         raise HTTPException(status_code=400, detail="Username already registered")
-    if db.query(HKUser).filter(HKUser.email == user.email).first():
-        raise HTTPException(status_code=400, detail="Email already registered")
     hashed_password = pwd_context.hash(user.password)
+    email = None
     db_user = HKUser(user_name=user.user_name, email=user.email, password=hashed_password, github_id=user.github_id, blog_link=user.blog_link, is_active=True, created_at=datetime.now())
     db.add(db_user)
     db.commit()

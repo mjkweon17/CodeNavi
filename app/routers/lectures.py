@@ -4,9 +4,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 # from models import User
 
-router = APIRouter()
+router = APIRouter(prefix="/lecutres", tags=["lecutres"], responses={404: {"description": "Not found"}})
 
-router = APIRouter(previx="/users", tags=["users"], responses={404: {"description": "Not found"}})
+# lectures handler
 
-# users 핸들러
-# @router.get("/")

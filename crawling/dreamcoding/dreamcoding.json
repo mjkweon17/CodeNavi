@@ -1,0 +1,58 @@
+[
+  {
+    title: Next.js 개념정리 · 클론코딩,
+    thumnail: https://academy.dream-coding.com/_next/image?url=https%3A%2F%2Fd2lmphbmp3ptuw.cloudfront.net%2Fassets%2FNext_js_Course_Thumbnail_0556159fcd.gif&w=1920&q=75,
+    difficulty: 2,
+    company_id: 5,
+    keyword: ['웹개발','프론트엔드','백엔드'],
+    link: /courses/next,
+    lecturer: 드림코더 엘리,
+    price: 200,000,
+    course_hours: 21시간,
+    introduction: 최신 Next.js 13+ 기본부터 제대로 배우자! 웹앱을 위한 다양한 렌더링 기법! 나만의 블로그 만들기와 인스타그램 클론코딩을 통한 실전 연습!,
+    discount_price: ,
+    stacks: ['HTML','CSS','Javascript','React','Next.js']
+  },
+  {
+    title: 리액트 개념정리 · 클론코딩,
+    thumnail: https://academy.dream-coding.com/_next/image?url=https%3A%2F%2Fd2lmphbmp3ptuw.cloudfront.net%2Fassets%2FReact_Course_2022_Thumbnail_min_80475ab50b.gif&w=1920&q=75,
+    difficulty: 2,
+    company_id: 5,
+    keyword: ['웹개발','프론트엔드'],
+    link: /courses/react,
+    lecturer: 드림코더 엘리,
+    price: 190,000,
+    course_hours: 16시간,
+    introduction: 리액트 기본부터 제대로 배우자. 기본 개념부터 고급까지! 투두앱, 유튜브, 쇼핑앱 만들기앱을 통한 실전 연습!,
+    discount_price: ,
+    stacks: ['HTML','CSS','Javascript','React']
+  },
+  {
+    title: 포트폴리오 웹사이트 클론코딩,
+    thumnail: https://academy.dream-coding.com/_next/image?url=https%3A%2F%2Fd2lmphbmp3ptuw.cloudfront.net%2FPortfolio_2023_thumbnail_bae3a1be55.gif&w=1920&q=75,
+    difficulty: 1,
+    company_id: 5,
+    keyword: ['웹개발','프론트엔드'],
+    link: /courses/portfolio,
+    lecturer: 드림코더 엘리,
+    price: 190,000,
+    course_hours: 10시간,
+    introduction: 나만의 포트폴리오 사이트 만들기. 반응형 동적 포트폴리오 사이트 클론 코딩,
+    discount_price: ,
+    stacks: ['HTML','CSS','Javascript']
+  },
+  {
+    title: 노드로 배우는 백엔드 A-Z,
+    thumnail: https://academy.dream-coding.com/_next/image?url=https%3A%2F%2Fd2lmphbmp3ptuw.cloudfront.net%2FPortfolio_2023_thumbnail_bae3a1be55.gif&w=1920&q=75,
+    difficulty: 1,
+    company_id: 5,
+    keyword: ['웹개발','백엔드'],
+    link: /courses/node,
+    lecturer: 드림코더 엘리,
+    price: 200,000,
+    course_hours: 14시간,
+    introduction: 노드로 백엔드 기본부터 고급까지 제대로 배우자. 백엔드 개발 입문을 위한 모든 내용들이 한곳에! 드위터 실전 프로젝트를 통해 문제해결 능력을 향상 할 수 있는 개념 + 실전 강의,
+    discount_price: ,
+    stacks: ['HTML','CSS','Javascript','Node.js']
+  }
+]

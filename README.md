@@ -91,44 +91,7 @@
 <img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190854-37fdf2c9-f8c7-4d00-a777-952ea3c7c127.png" >
 
 
-
-
-
-
-
-### 개요
-
-### 기능 설명
-- UI, UX와 함께 설명
-
-### ERD
-
-### Architecture
-- 아키텍쳐 이미지
-- CI/CD 이미지
-
-## Backend
-
-### TODO
-- DB
-    - 2000 기능 검토
-    - 2000 ERD 그리기
-    - 2000 ERD 검토
-- Server Configuration
-    - 2130 venv 설치
-    - 2200 requirments.txt 파일 pip
-    - 2200 folder structure 만들기
-    - 2200 .env 파일 이동
-- CI/CD configuration
-    - 2230 github secretes 추가
-    - 2230 local에서 dockerfile 생성 후 잘 실행되는지 확인
-    - 2230 main repository에서 CI/CD 잘 되는지 확인
-- GitHub Read.md 파일 꾸미기
-    - 0000 Developer 소개
-    - 파일 돌리는 법
-
-
-### 기능
+## 기능 설명
 
 - 로그인
 - 회원가입
@@ -162,5 +125,77 @@
 - 커뮤니티
     - 게시판: 전체 프론트엔드, 백엔드, 데이터, 머신러닝, 기타
 
+## API 리스트
 
-## Frontend
+  <table>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/test</td>
+      <td>전체 사용자 조회하는 테스트용 API<br>이 API를 통해서 서버가 DB와 잘 연결돼있는지 확인</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/auth/register</td>
+      <td>회원가입</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/auth/login</td>
+      <td>회원가입</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/lecture</td>
+      <td>전체 강의 목록 조회</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/lecture/{page_id}</td>
+      <td>전체 강의 목록 10개씩 조회</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/lecture/search/all</td>
+      <td>키워드를 주면 해당 키워드가 제모에 포함된 강의 목록 ‘전부’ return</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/lecture/search/{page}</td>
+      <td>키워드를 주면 해당 키워드가 제모에 포함된 강의 목록 ‘20개’ return</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/lecture/{lecutre_id}</td>
+      <td>lecture_id에 맞는 강의 상세 조회</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/users/{user_id}</td>
+      <td>user_id에 해당하는 사용자 정보 조회</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/users/{user_id}/bookmarks</td>
+      <td>user_id에 해당하는 사용자의 찜목록 조회 (목록임! 리스트임!)</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/users/{user_id}/reviews</td>
+      <td>user_id에 해당하는 사용자의 리뷰 목록 조회</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>/reviews</td>
+      <td>리뷰 작성</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>/reviews/{reviews_id}</td>
+      <td>review_id에 해당하는 리뷰 내용 조회</td>
+    </tr>
+  </table>

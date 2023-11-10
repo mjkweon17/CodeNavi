@@ -26,7 +26,7 @@
        <img width="200" src = "https://avatars.githubusercontent.com/u/75142329?v=4" />
     </td>
     <td>
-      <img width="200" src = "https://avatars.githubusercontent.com/u/78201530?v=4"/>
+      <img width="200" src = "https://avatars.githubusercontent.com/u/66587876?v=4"/>
     </td>
         <td>
       <img width="200" src = "https://avatars.githubusercontent.com/u/66587876?v=4"/>

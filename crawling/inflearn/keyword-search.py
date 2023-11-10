@@ -53,13 +53,25 @@ def keyword_search(keywords):
       course_info_list.append(course_info)
 
 
- 
+  # 강의 디테일 페이지에서 데이터 가져와서 course_info에 추가
+  # 총 강의 시간
+  for course_info in course_info_list:
+    target_url = course_info['link']
+  
+    course_detail_data = course_detail_search(target_url)
+    if course_info['link'] == target_url:
+        course_info['course_hours'] = course_detail_data[0]
+        course_info['introduction'] = course_detail_data[2]
+        course_info['discount_price'] = course_detail_data[3]
+        course_info['stacks'] = course_detail_data[4]
+        course_info['thumnail'] = course_detail_data[5]
         
   return course_info_list
 
 result = keyword_search(keywords)
 
 print(result)
+
 
 
 

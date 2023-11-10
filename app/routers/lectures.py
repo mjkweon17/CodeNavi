@@ -1,7 +1,7 @@
 from typing import Annotated, List
 from datetime import datetime, timedelta
 
-from fastapi import APIRouter, Depends, Response, Request, HTTPException, status
+from fastapi import APIRouter, Depends, Response, Request, HTTPException, status, Query
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
@@ -60,15 +60,52 @@ async def search_lectures(keyword: str, page: int, db: Session = Depends(get_db)
     lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
     return lectures
 
-'''
+
 # 검색 pagination
-# 필터(옵션): keyword, stack, difficulty, course_hours, price
+# 필터(옵션, 여러 개 선택 가능): keyword, stack, difficulty, course_hours, price
 # Request: keyword, stack, difficulty, course_hours, price
 # Response: 강의 목록
-@router.get("/search/{page}")
-async def search_lectures(keyword: str, stack: str, difficulty: str, course_hours: str, price: str, page: int, db: Session = Depends(get_db)):
-    lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
-    return lectures 
+
+'''
+# Endpoint for lecture search with filters and pagination
+@router.get("/search_filter", response_model=list[HKLecture])
+def search_lectures(
+        keyword: str = Query(None, title="Keyword filter"),
+        stack: str = Query(None, title="Stack filter"),
+        difficulty: str = Query(None, title="Difficulty filter"),
+        course_hours: str = Query(None, title="Course Hours filter"),
+        # 가격은 범위로
+        price: str = Query(None, title="Price filter"),
+        page: int = Query(1, title="Page number"),
+        items_per_page: int = Query(10, title="Items per page"),
+        db: Session = Depends(get_db)
+):
+    # Build a filter query based on the provided filters
+    filters = []
+    if keyword:
+        filters.append(HKLecture.keyword.ilike(f"%{keyword}%"))
+    # stack은 HKLectureStack의 stack_category의 stack_name
+    if stack:
+        filters.append(HKLectureStack.stack_category.has(stack_name=stack))
+    if difficulty:
+        filters.append(HKLecture.difficulty == difficulty)
+    if course_hours:
+        filters.append(HKLecture.course_hours == course_hours)
+    # 가격은 범위로
+    if price:
+        price_range = price.split('-')
+        filters.append(HKLecture.discount_price.between(price_range[0], price_range[1]))
+
+    # Query for lectures with pagination
+    lectures = (
+        db.query(HKLecture)
+        .filter(*filters)
+        .offset((page - 1) * items_per_page)
+        .limit(items_per_page)
+        .all()
+    )
+
+    return lectures
 '''
 
 # 상세 강의 조회

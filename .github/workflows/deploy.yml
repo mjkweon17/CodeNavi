@@ -49,7 +49,7 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
+        key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         envs: DB_DB, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER, FB_SALT_SEPARATOR, FB_SIGNER_KEY, FB_ROUNDS, FB_MEM_COST, DOCKERHUB_USERNAME, DOCKERHUB_TOKEN, JWT_SECRET_KEY, JWT_ALGORITHM
         script: |

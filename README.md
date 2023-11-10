@@ -1,23 +1,20 @@
-### Rising Coder
+## Rising Coder
 
 - [웹 배포 링크]()
 - [서버 배포 링크](http://118.67.143.134:8080/)
 
-## 주제
+## 개요
+- 역삼역에는 많은 개발자가 있음
+- 현업 개발자들뿐만 아니라, 부트캠프 및 학원에서 개발의 꿈을 키우는 사람들이 많음
+- 예비 개발자들은 기초를 쌓기 위해 좋은 강의를 듣고 싶어함
+- 현업 개발자들도 실력을 키우기 위해 강의를 듣곤 함
+- 심지어 개발자로 이직을 꿈꾸거나, 개발에 대해 배우고 싶어하는 다른 직군에서 일하는 사람들도 개발과 관련된 교육에 대한 니즈가 있음
+- 하지만 교육 플랫폼도 많은뿐더러, 하나의 플랫폼에도 같은 기술에 대한 강의가 무수히 많아서 역삼역 피플들은 강의를 고르는 데 큰 어려움을 겪곤함
+- 그래서 해키토키 팀8은 이러한 어려움을 해결해주고자, 여러 코딩 교육 플랫폼의 강의 목록을 한곳에 모아두고, 필터링을 통해 원하는 강의를 쉽게 찾거나, 사용자들의 생생한 리뷰를 듣고 비교할 수 있는 사이트를 만듦.
 
-## 구현 기능
+## 일정
+- 2023년 11월 10일 19시 ~ 2023년 11월 11일 20시
 
-
-## 다이어그램
-
-### Overall Architecture
-<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190612-2089d2e5-0304-4951-aadf-cf3746b17897.png" >
-
-### CI/CD Architecture
-<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190604-7e1598f7-c5ce-4e65-a40a-b88302ce58b6.png" >
-
-### ERD
-<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190854-37fdf2c9-f8c7-4d00-a777-952ea3c7c127.png" >
 
 ## 💻 Team 8 소개
 
@@ -68,10 +65,6 @@
   </tr>
 </table>
 
-If you would like to contribute to this project or if you have any questions or need assistance, feel free to reach out to [mjkweon17](https://github.com/mjkweon17) for guidance.
-
-
-
 ## 🛠 Frontend Tech Stack
 | Framework | React, Vite |
 |:---|:---|
@@ -85,6 +78,21 @@ If you would like to contribute to this project or if you have any questions or 
 | Database/ORM | MySQL, Naver Cloud Platform - Cloud DB for MySQL, SQLAlchemy |
 | CI/CD | Naver Cloud Platform - Server, Docker, Docker Hub, GitHub Actions |
 | ETC | Swagger, Notion, Figma, Discord, [ERDCloud](https://www.erdcloud.com/d/nSaQY4NjMcnwcQ3CM), MySQL Workbench |
+
+## 다이어그램
+
+### Overall Architecture
+<img width = "500" src = "https://user-images.githubusercontent.com/75142329/282190612-2089d2e5-0304-4951-aadf-cf3746b17897.png" >
+
+### CI/CD Architecture
+<img width = "500" src = "https://user-images.githubusercontent.com/75142329/282190604-7e1598f7-c5ce-4e65-a40a-b88302ce58b6.png" >
+
+### ERD
+<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190854-37fdf2c9-f8c7-4d00-a777-952ea3c7c127.png" >
+
+
+
+
 
 
 

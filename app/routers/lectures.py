@@ -60,8 +60,16 @@ async def search_lectures(keyword: str, page: int, db: Session = Depends(get_db)
     lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
     return lectures
 
-# 
-
+'''
+# 검색 pagination
+# 필터(옵션): keyword, stack, difficulty, course_hours, price
+# Request: keyword, stack, difficulty, course_hours, price
+# Response: 강의 목록
+@router.get("/search/{page}")
+async def search_lectures(keyword: str, stack: str, difficulty: str, course_hours: str, price: str, page: int, db: Session = Depends(get_db)):
+    lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
+    return lectures 
+'''
 
 # 상세 강의 조회
 @router.get("/{lecture_id}")

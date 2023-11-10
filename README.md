@@ -4,10 +4,18 @@
 - [서버 배포 링크](http://118.67.143.134:8080/)
 
 ## 개요
-'코드 나비'은 역삼역의 개발자 및 예비 개발자들이 다양한 플랫폼에서 원하는 강의를 쉽게 찾고 비교할 수 있도록, 강의 목록을 한곳에 모아 필터링하고 사용자 리뷰를 제공하는 서비스입니다.
+'코드 나비'는 역삼역의 개발자 및 예비 개발자들이 다양한 플랫폼에서 원하는 강의를 쉽게 찾고 비교할 수 있도록, 강의 목록을 한곳에 모아 필터링하고 사용자 리뷰를 제공하는 서비스입니다.
+
+### 서비스 소개
+스타트업, IT 회사가 많은 역삼역.
+팀에서 새로운 프로젝트를 들어가는데, 처음 쓰는 기술 스택이다.  강의를 보고 싶은데 어떤 강의를 봐야할까 ?
+
+이제는 데이터분석을 공부하고 싶다. 어떻게 공부해야할까?
+
+분산되어 있는 온라인 강의들을 한번에 !
 
 ## 일정
-- 2023년 11월 10일 19시 ~ 2023년 11월 11일 20시
+- 2023년 11월 10일 19시 ~ 2023년 11월 11일 08시
 
 
 ## 💻 Team 8 소개
@@ -18,7 +26,7 @@
        <img width="200" src = "https://avatars.githubusercontent.com/u/75142329?v=4" />
     </td>
     <td>
-      <img width="200" src = "https://avatars.githubusercontent.com/u/78201530?v=4"/>
+      <img width="200" src = "https://avatars.githubusercontent.com/u/66587876?v=4"/>
     </td>
         <td>
       <img width="200" src = "https://avatars.githubusercontent.com/u/66587876?v=4"/>
@@ -196,4 +204,3 @@
 | <img src="https://user-images.githubusercontent.com/75142329/282195384-18271285-4578-4d3e-923c-2130bd362b46.png" width="200"><br/>메인 페이지 | <img src="https://user-images.githubusercontent.com/75142329/282195365-09152f97-bf9a-4a32-bfe7-701125a2b636.png" width="200"><br/>로그인 | <img src="https://user-images.githubusercontent.com/75142329/282195368-f16aba74-210d-4c1e-88b3-340706ba718b.png" width="200"><br/>회원가입 |
 |:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|
 | <img src="https://user-images.githubusercontent.com/75142329/282195375-0af63d53-829e-470d-a863-e1d408415f90.png" width="200"><br/>강의 필터링 | <img src="https://user-images.githubusercontent.com/75142329/282195381-08fd62ec-642c-47e1-98fc-42c01a6741ec.png" width="200"><br/>강의 상세 정보 | <img src="https://user-images.githubusercontent.com/75142329/282195378-21b4e2af-2fe6-41da-82d7-83d4fb833281.png" width="200"><br/>리뷰 작성 |
-| <img src="https://user-images.githubusercontent.com/75142329/282195371-636cdec2-1cd7-42c0-be6a-431a687194c8.png" width="200"><br/>마이 페이지 | <img src="https://user-images.githubusercontent.com/75142329/282195363-0008d2da-144b-44c0-88ab-88aa3d05b020.png" width="200"><br/>보관함 | <img src="https://user-images.githubusercontent.com/75142329/282195374-b4da498a-b92f-4068-9df2-01e4440bf635.png" width="200"><br/>작성한 리뷰 |

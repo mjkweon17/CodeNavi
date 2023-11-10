@@ -138,13 +138,10 @@ async def get_lectures(page: int, db: Session = Depends(get_db)):
 # 강의 목록 검색
 # Request: keyword
 # Response: 강의 목록
-@router.get("/search")
+@router.get("/search/all")
 async def search_lectures(keyword: str, db: Session = Depends(get_db)):
     lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).all()
     return lectures
-
-
-
 
 # 검색하면 20개씩만 보여주기
 # Request: keyword, page
@@ -203,7 +200,7 @@ def search_lectures(
 '''
 
 # 상세 강의 조회
-@router.get("/{lecture_id}")
+@router.get("/detail/{lecture_id}")
 async def get_lecture(lecture_id: int, db: Session = Depends(get_db)):
 
     lecture = db.query(HKLecture).filter(HKLecture.lecture_id == lecture_id).first()

@@ -55,12 +55,12 @@ CREATE TABLE `HKBookmark` (
     FOREIGN KEY (`lecture_id`) REFERENCES `HKLecture` (`lecture_id`) ON UPDATE CASCADE
 );
 
-CREATE TABLE `HKSTACK_CATEGORY` (
+CREATE TABLE `HKStackCategory` (
 	`stack_category_id`	INT	AUTO_INCREMENT	NOT NULL,
 	`parent_id`	INT	NULL,
-	`stack_name`	INT	NOT NULL,
+	`stack_name`	VARCHAR(255)	NOT NULL,
     PRIMARY KEY (`stack_category_id`),
-    FOREIGN KEY (`parent_id`) REFERENCES `HKSTACK_CATEGORY` (`stack_category_id`) ON UPDATE CASCADE
+    FOREIGN KEY (`parent_id`) REFERENCES `HKStackCategory` (`stack_category_id`) ON UPDATE CASCADE
 );
 
 CREATE TABLE `HKLectureStack` (
@@ -68,7 +68,7 @@ CREATE TABLE `HKLectureStack` (
 	`stack_category_id`	INT	NOT NULL,
 	`lecture_id`	INT	NOT NULL,
     PRIMARY KEY (`lecture_stack_id`),
-    FOREIGN KEY (`stack_category_id`) REFERENCES `HKSTACK_CATEGORY` (`stack_category_id`) ON UPDATE CASCADE,
+    FOREIGN KEY (`stack_category_id`) REFERENCES `HKStackCategory` (`stack_category_id`) ON UPDATE CASCADE,
     FOREIGN KEY (`lecture_id`) REFERENCES `HKLecture` (`lecture_id`) ON UPDATE CASCADE
 );
 
@@ -78,7 +78,7 @@ CREATE TABLE `HKUserStack` (
 	`stack_category_id`	INT	NOT NULL,
     PRIMARY KEY (`user_stack_id`),
     FOREIGN KEY (`user_id`) REFERENCES `HKUser` (`user_id`) ON UPDATE CASCADE,
-    FOREIGN KEY (`stack_category_id`) REFERENCES `HKSTACK_CATEGORY` (`stack_category_id`) ON UPDATE CASCADE
+    FOREIGN KEY (`stack_category_id`) REFERENCES `HKStackCategory` (`stack_category_id`) ON UPDATE CASCADE
 );
 
 CREATE TABLE `HKBoard` (

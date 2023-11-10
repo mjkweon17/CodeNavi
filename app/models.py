@@ -11,11 +11,18 @@ class HKUser(Base):
     created_at = Column(DateTime, nullable=False)
     github_id = Column(String(255), nullable=False)
     blog_link = Column(String(255), nullable=False)
+    
+    reviews = relationship('HKReview', back_populates='user')
+    bookmarks = relationship('HKBookmark', back_populates='user')
+    boards = relationship('HKBoard', back_populates='user')
+    user_stacks = relationship('HKUserStack', back_populates='user')
 
 class HKCompany(Base):
     __tablename__ = 'HKCompany'
     company_id = Column(Integer, primary_key=True, autoincrement=True)
     company_name = Column(String(255), nullable=False)
+
+    lectures = relationship('HKLecture', back_populates='company')
 
 class HKLecture(Base):
     __tablename__ = 'HKLecture'
@@ -30,9 +37,15 @@ class HKLecture(Base):
     difficulty = Column(String(255), nullable=True)
     company_id = Column(Integer, ForeignKey('HKCompany.company_id'), nullable=False)
     price = Column(String(255), nullable=True)
-    discount_rate = Column(String(255), nullable=True)
+    discount_price = Column(String(255), nullable=True)
     introduction = Column(Text, nullable=True)
+    keyword = Column(String(255), nullable=True)
+    link = Column(String(255), nullable=True)
+
     company = relationship('HKCompany', back_populates='lectures')
+    lecture_stacks = relationship('HKLectureStack', back_populates='lecture')
+    reviews = relationship('HKReview', back_populates='lecture')
+    bookmarks = relationship('HKBookmark', back_populates='lecture')
 
 class HKReview(Base):
     __tablename__ = 'HKReview'
@@ -44,6 +57,7 @@ class HKReview(Base):
     bad_review = Column(Text, nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
     created_at = Column(DateTime, nullable=False)
+
     lecture = relationship('HKLecture', back_populates='reviews')
     user = relationship('HKUser', back_populates='reviews')
 
@@ -52,6 +66,7 @@ class HKBookmark(Base):
     bookmark_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('HKUser.user_id'), nullable=False)
     lecture_id = Column(Integer, ForeignKey('HKLecture.lecture_id'), nullable=False)
+
     user = relationship('HKUser', back_populates='bookmarks')
     lecture = relationship('HKLecture', back_populates='bookmarks')
 
@@ -59,14 +74,18 @@ class HKStackCategory(Base):
     __tablename__ = 'HKStackCategory'
     stack_category_id = Column(Integer, primary_key=True, autoincrement=True)
     parent_id = Column(Integer, ForeignKey('HKStackCategory.stack_category_id'), nullable=True)
-    stack_name = Column(Integer, nullable=False)
+    stack_name = Column(String(255), nullable=False)
+
     parent = relationship('HKStackCategory', remote_side=[stack_category_id])
+    lecture_stacks = relationship('HKLectureStack', back_populates='stack_category')
+    user_stacks = relationship('HKUserStack', back_populates='stack_category')
 
 class HKLectureStack(Base):
     __tablename__ = 'HKLectureStack'
     lecture_stack_id = Column(Integer, primary_key=True, autoincrement=True)
     stack_category_id = Column(Integer, ForeignKey('HKStackCategory.stack_category_id'), nullable=False)
     lecture_id = Column(Integer, ForeignKey('HKLecture.lecture_id'), nullable=False)
+
     stack_category = relationship('HKStackCategory', back_populates='lecture_stacks')
     lecture = relationship('HKLecture', back_populates='lecture_stacks')
 
@@ -75,6 +94,7 @@ class HKUserStack(Base):
     user_stack_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('HKUser.user_id'), nullable=False)
     stack_category_id = Column(Integer, ForeignKey('HKStackCategory.stack_category_id'), nullable=False)
+
     user = relationship('HKUser', back_populates='user_stacks')
     stack_category = relationship('HKStackCategory', back_populates='user_stacks')
 
@@ -86,13 +106,5 @@ class HKBoard(Base):
     created_at = Column(DateTime, nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
     content = Column(Text, nullable=False)
-    user = relationship('HKUser', back_populates='boards')
 
-# Set up relationships
-HKCompany.lectures = relationship('HKLecture', back_populates='company')
-HKLecture.reviews = relationship('HKReview', back_populates='lecture')
-HKUser.reviews = relationship('HKReview', back_populates='user')
-HKUser.bookmarks = relationship('HKBookmark', back_populates='user')
-HKStackCategory.lecture_stacks = relationship('HKLectureStack', back_populates='stack_category')
-HKStackCategory.user_stacks = relationship('HKUserStack', back_populates='stack_category')
-HKUser.boards = relationship('HKBoard', back_populates='user')
+    user = relationship('HKUser', back_populates='boards')

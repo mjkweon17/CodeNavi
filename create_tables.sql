@@ -1,5 +1,7 @@
 CREATE TABLE `HKUser` (
 	`user_id`	INT	AUTO_INCREMENT	NOT NULL,
+	`user_name`	VARCHAR(255)	NOT NULL,
+	`email`	VARCHAR(255)	NOT NULL,
 	`password`	VARCHAR(255)	NOT NULL,
 	`is_active`	BOOL	NOT NULL	DEFAULT TRUE,
 	`created_at`	DATETIME	NOT NULL,
@@ -26,8 +28,10 @@ CREATE TABLE `HKLecture` (
 	`difficulty`	VARCHAR(255)	NULL,
 	`company_id`	INT	NOT NULL,
 	`price`	VARCHAR(255)	NULL,
-	`discount_rate`	VARCHAR(255)	NULL,
+	`discount_price`	VARCHAR(255)	NULL,
 	`introduction`	TEXT	NULL,
+	`keyword`	VARCHAR(255)	NULL,
+	`link`	VARCHAR(255)	NULL,
     PRIMARY KEY (`lecture_id`),
     FOREIGN KEY (`company_id`) REFERENCES `HKCompany` (`company_id`) ON UPDATE CASCADE
 );

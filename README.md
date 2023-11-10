@@ -36,9 +36,6 @@
     <th align="center">박성철</th>
     <th align="center">소효은</th>
   </tr>
-    <tr>
-    <th align="center" colspan="4">Project Planning</th>
-  </tr>
   <tr>
     <td align="center">
       <a href="https://github.com/mjkweon17">mjkweon17</a>
@@ -53,17 +50,15 @@
       <a href="https://github.com/she0108">she0108</a>
     </td>
   </tr>
+    <tr>
+    <th align="center" colspan="4">Project Planning</th>
+  </tr>
+
   <tr>
     <th align="center">Backend, CI/CD</th>
-    <th align="center">Frontend</th>
-    <th align="center">Frontend</th>
     <th align="center">Web Crawling, Data Managing</th>
-  </tr>
-  <tr>
-    <th align="center">KUCC</th>
-    <th align="center">KUCC</th>
-    <th align="center">KUCC</th>
-    <th align="center">YCC</th>
+    <th align="center">Frontend</th>
+    <th align="center">Frontend</th>
   </tr>
 </table>
 

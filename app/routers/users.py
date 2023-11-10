@@ -1,16 +1,12 @@
-from fastapi import APIRouter, Depends, Response, Request, status
-from sqlalchemy.orm import Session
+# from typing import Annotated, List
+# from datetime import datetime, timedelta
 
-from database import get_db
-# from models import User
+# from fastapi import APIRouter, Depends, Response, Request, HTTPException, status
+# from fastapi.security import HTTPBasic, HTTPBasicCredentials
+# from sqlalchemy.orm import Session
+# from pydantic import BaseModel
 
-router = APIRouter()
+# from database import get_db
+# from models import HKUser
 
-router = APIRouter(previx="/users", tags=["users"], responses={404: {"description": "Not found"}})
-
-# users 핸들러
-@router.get("/")
-async def get_users(db: Session = Depends(get_db)):
-    # users = db.query(User).all()
-    # return users
-    return {"message": "users"}
+# router = APIRouter(prefix="/lecutres", tags=["lecutres"], responses={404: {"description": "Not found"}})

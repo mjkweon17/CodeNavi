@@ -18,6 +18,7 @@ origins = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://localhost:8080",
+    "http://localhost:5173",
     # 프론트엔드 배포 주소
 ]
 

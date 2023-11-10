@@ -37,9 +37,6 @@ class LectureInDB(BaseModel):
     review: List[Review] | None = None # 계산 필요
     stack: str | None = None # 계산 필요
 
-
-
-
 # 강의 목록 조회
 @router.get("/")
 async def get_lectures(db: Session = Depends(get_db)):
@@ -63,6 +60,7 @@ async def search_lectures(keyword: str, page: int, db: Session = Depends(get_db)
     lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
     return lectures
 
+# 
 
 
 # 상세 강의 조회

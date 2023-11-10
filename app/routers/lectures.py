@@ -203,7 +203,7 @@ def search_lectures(
 '''
 
 # 상세 강의 조회
-@router.get("/detail/{lecture_id}")
+@router.get("/details/{lecture_id}")
 async def get_lecture(lecture_id: int, db: Session = Depends(get_db)):
 
     lecture = db.query(HKLecture).filter(HKLecture.lecture_id == lecture_id).first()

@@ -8,10 +8,16 @@
 ## 구현 기능
 
 
+## 다이어그램
 
+### Overall Architecture
+<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190612-2089d2e5-0304-4951-aadf-cf3746b17897.png" >
 
+### CI/CD Architecture
+<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190604-7e1598f7-c5ce-4e65-a40a-b88302ce58b6.png" >
 
-
+### ERD
+<img width = "800" src = "https://user-images.githubusercontent.com/75142329/282190854-37fdf2c9-f8c7-4d00-a777-952ea3c7c127.png" >
 
 ## 💻 Team 8 소개
 

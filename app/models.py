@@ -43,6 +43,8 @@ class HKLecture(Base):
     introduction = Column(Text, nullable=True)
     keyword = Column(String(255), nullable=True)
     link = Column(String(255), nullable=True)
+    stacks = Column(String(255), nullable=True)
+    keyword = Column(String(255), nullable=True)
 
     company = relationship('HKCompany', back_populates='lectures')
     lecture_stacks = relationship('HKLectureStack', back_populates='lecture')

@@ -60,7 +60,7 @@
 </table>
 
 ## 🛠 Frontend Tech Stack
-| Framework | React, Vite |
+| Framework | React, Vit, Zustand |
 |:---|:---|
 | Language | HTML, CSS, Javascript |
 | Deployment | Vercel |

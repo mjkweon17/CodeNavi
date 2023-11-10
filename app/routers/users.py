@@ -12,6 +12,7 @@ from models import HKUser, HKReview, HKBookmark, HKUserStack, HKStackCategory
 router = APIRouter(prefix="/users", tags=["users"], responses={404: {"description": "Not found"}})
 
 class UserInDB(BaseModel):
+    user_id: int | None = None
     user_name: str | None = None
     bookmark_num: int | None = None
     review_num: int | None = None
@@ -22,6 +23,7 @@ class UserInDB(BaseModel):
 async def get_user(user_id: int, db: Session = Depends(get_db)):
     user = db.query(HKUser).filter(HKUser.user_id == user_id).first()
     user_in_db = UserInDB()
+    user_in_db.user_id = user.user_id
     user_in_db.user_name = user.user_name
     user_in_db.bookmark_num = len(user.bookmarks)
     user_in_db.review_num = len(user.reviews)

@@ -23,6 +23,7 @@ class Review(BaseModel):
 
 class LectureInDB(BaseModel):
     lecture_id: int | None = None
+    thumbnail: str | None = None
     title: str | None = None
     lecturer: str | None = None
     running_time: str | None = None   # course_hours
@@ -50,6 +51,7 @@ async def get_lectures(db: Session = Depends(get_db)):
         lecture_in_db.lecture_id = lecture.lecture_id
         lecture_in_db.title = lecture.title
         lecture_in_db.lecturer = lecture.lecturer
+        lecture_in_db.thumbnail = lecture.thumbnail
         lecture_in_db.running_time = lecture.course_hours
         lecture_in_db.difficulty = lecture.difficulty
         lecture_in_db.original_price = lecture.price
@@ -99,6 +101,7 @@ async def get_lectures(page: int, db: Session = Depends(get_db)):
         lecture_in_db.title = lecture.title
         lecture_in_db.lecturer = lecture.lecturer
         lecture_in_db.running_time = lecture.course_hours
+        lecture_in_db.thumbnail = lecture.thumbnail
         lecture_in_db.difficulty = lecture.difficulty
         lecture_in_db.original_price = lecture.price
         lecture_in_db.current_price = lecture.discount_price
@@ -209,6 +212,7 @@ async def get_lecture(lecture_id: int, db: Session = Depends(get_db)):
     lecture_in_db.title = lecture.title
     lecture_in_db.lecturer = lecture.lecturer
     lecture_in_db.running_time = lecture.course_hours
+    lecture_in_db.thumbnail = lecture.thumbnail
     lecture_in_db.difficulty = lecture.difficulty
     lecture_in_db.original_price = lecture.price
     lecture_in_db.current_price = lecture.discount_price

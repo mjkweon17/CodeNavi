@@ -6,6 +6,8 @@ Base = declarative_base()
 class HKUser(Base):
     __tablename__ = 'HKUser'
     user_id = Column(Integer, primary_key=True, autoincrement=True)
+    user_name = Column(String(255), nullable=False)
+    email = Column(String(255), nullable=False)
     password = Column(String(255), nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
     created_at = Column(DateTime, nullable=False)

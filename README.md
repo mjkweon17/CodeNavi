@@ -1,6 +1,6 @@
 ## CodeNavi
 
-- [웹 배포 링크]()
+- [프론트엔드 리포지토리](https://github.com/HACKY-TALKY-2/Team-8-Frontend)
 - [서버 배포 링크](http://118.67.143.134:8080/)
 
 ## 개요
@@ -190,3 +190,10 @@
       <td>review_id에 해당하는 리뷰 내용 조회</td>
     </tr>
   </table>
+
+## 앱 화면
+
+| <img src="https://user-images.githubusercontent.com/75142329/282195384-18271285-4578-4d3e-923c-2130bd362b46.png" width="100"><br/>메인 페이지 | <img src="https://user-images.githubusercontent.com/75142329/282195365-09152f97-bf9a-4a32-bfe7-701125a2b636.png" width="100"><br/>로그인 | <img src="https://user-images.githubusercontent.com/75142329/282195368-f16aba74-210d-4c1e-88b3-340706ba718b.png" width="100"><br/>회원가입 |
+|:-------------------------------------------------:|:-------------------------------------------------:|:-------------------------------------------------:|
+| <img src="https://user-images.githubusercontent.com/75142329/282195375-0af63d53-829e-470d-a863-e1d408415f90.png" width="100"><br/>강의 필터링 | <img src="https://user-images.githubusercontent.com/75142329/282195381-08fd62ec-642c-47e1-98fc-42c01a6741ec.png" width="100"><br/>강의 상세 정보 | <img src="https://user-images.githubusercontent.com/75142329/282195378-21b4e2af-2fe6-41da-82d7-83d4fb833281.png" width="100"><br/>리뷰 작성 |
+| <img src="https://user-images.githubusercontent.com/75142329/282195371-636cdec2-1cd7-42c0-be6a-431a687194c8.png" width="100"><br/>마이 페이지 | <img src="https://user-images.githubusercontent.com/75142329/282195363-0008d2da-144b-44c0-88ab-88aa3d05b020.png" width="100"><br/>보관함 | <img src="https://user-images.githubusercontent.com/75142329/282195374-b4da498a-b92f-4068-9df2-01e4440bf635.png" width="100"><br/>작성한 리뷰 |

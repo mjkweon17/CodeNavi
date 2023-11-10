@@ -23,6 +23,12 @@ class User(BaseModel):
     blog_link: str | None
 
 class UserInDB(User):
+    user_name: str
+    email: str
+    github_id: str | None
+    blog_link: str | None
+
+class UserInDB(User):
     hashed_password: str
 
 
@@ -41,13 +47,12 @@ async def register_user(user: User, db: Session = Depends(get_db)):
     return db_user
     
 
-'''
 # 로그인
-async def login_user(username: str, password: str):
-    user = fake_users_db.get(username)
-    if not user or not pwd_context.verify(password, user.hashed_password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
-    return {"message": "Login successful"}
-
-
-'''
+@router.post("/login")
+async def login_user(user_name: str, password: str, db: Session = Depends(get_db)):
+    user = db.query(HKUser).filter(HKUser.user_name == user_name).first()
+    if not user:
+        raise HTTPException(status_code=401, detail="Incorrect username or password")
+    if not pwd_context.verify(password, user.password):
+        raise HTTPException(status_code=401, detail="Incorrect username or password")
+    return user

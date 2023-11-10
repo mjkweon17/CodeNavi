@@ -1,0 +1,38 @@
+name: test 
+
+on:  
+  push: 
+    branches:
+      - deploy
+  pull_request:
+    branches:
+      - deploy
+      - main
+
+jobs:
+  build: 
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Connect to NCP Server, pass enviroment, and run docker
+      uses: appleboy/ssh-action@master
+      env:
+        DB_DB: ${{ secrets.DB_DB }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.SSH_PORT }}
+        envs: DB_DB, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER, FB_SALT_SEPARATOR, FB_SIGNER_KEY, FB_ROUNDS, FB_MEM_COST, DOCKERHUB_USERNAME, DOCKERHUB_TOKEN, JWT_SECRET_KEY, JWT_ALGORITHM
+        script: |
+          echo "HELLO"

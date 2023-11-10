@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from database import get_db
 from models import HKLecture, HKReview, HKCompany, HKLectureStack
 
-router = APIRouter(prefix="/lecutres", tags=["lecutres"], responses={404: {"description": "Not found"}})
+router = APIRouter(prefix="/lecture", tags=["lectures"], responses={404: {"description": "Not found"}})
 
 
 class Review(BaseModel):
@@ -45,6 +45,25 @@ class LectureInDB(BaseModel):
 async def get_lectures(db: Session = Depends(get_db)):
     lectures = db.query(HKLecture).all()
     return lectures
+
+
+# 강의 목록 검색
+# Request: keyword
+# Response: 강의 목록
+@router.get("/search")
+async def search_lectures(keyword: str, db: Session = Depends(get_db)):
+    lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).all()
+    return lectures
+
+# 검색하면 20개씩만 보여주기
+# Request: keyword, page
+# Response: 강의 목록
+@router.get("/search/{page}")
+async def search_lectures(keyword: str, page: int, db: Session = Depends(get_db)):
+    lectures = db.query(HKLecture).filter(HKLecture.title.like('%'+keyword+'%')).limit(20).offset((page-1)*20).all()
+    return lectures
+
+
 
 # 상세 강의 조회
 @router.get("/{lecture_id}")

@@ -225,10 +225,14 @@ async def get_lecture(lecture_id: int, db: Session = Depends(get_db)):
     reviews = db.query(HKReview).filter(HKReview.lecture_id == lecture.lecture_id).all()
 
     # rating은 reviews의 star의 평균
-    total_star = 0
+
     for review in reviews:
         total_star += review.star
-    lecture_in_db.rating = total_star / len(reviews)
+        total_star = 0
+    if(len(reviews) == 0):
+        lecture_in_db.rating = 0
+    else:
+        lecture_in_db.rating = total_star / len(reviews)
 
     # review_amount는 reviews의 개수
     lecture_in_db.review_amount = len(reviews)

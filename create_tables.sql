@@ -22,7 +22,7 @@ CREATE TABLE `HKLecture` (
 	`title`	VARCHAR(255)	NOT NULL,
 	`thumbnail`	VARCHAR(255)	NULL,
 	`lecturer`	VARCHAR(255)	NOT NULL,
-	`couse_hours`	VARCHAR(255)	NULL,
+	`course_hours`	VARCHAR(255)	NULL,
 	`difficulty`	VARCHAR(255)	NULL,
 	`company_id`	INT	NOT NULL,
 	`price`	VARCHAR(255)	NULL,

@@ -24,13 +24,13 @@
     - 2000 ERD 검토
 - Server Configuration
     - 2130 venv 설치
-    - 2130 requirments.txt 파일 pip
-    - 2130 folder structure 만들기
-    - 2130 .env 파일 이동
+    - 2200 requirments.txt 파일 pip
+    - 2200 folder structure 만들기
+    - 2200 .env 파일 이동
 - CI/CD configuration
-    - 2200 github secretes 추가
-    - 2200 local에서 dockerfile 생성 후 잘 실행되는지 확인
-    - 2200 main repository에서 CI/CD 잘 되는지 확인
+    - 2230 github secretes 추가
+    - 2230 local에서 dockerfile 생성 후 잘 실행되는지 확인
+    - 2230 main repository에서 CI/CD 잘 되는지 확인
 - GitHub Read.md 파일 꾸미기
     - 0000 Developer 소개
     - 파일 돌리는 법

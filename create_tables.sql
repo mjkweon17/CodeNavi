@@ -3,8 +3,15 @@ CREATE TABLE `User` (
 	`password`	VARCHAR(255)	NOT NULL,
 	`is_active`	BOOL	NOT NULL	DEFAULT TRUE,
 	`created_at`	DATETIME	NOT NULL,
-	`Field`	VARCHAR(255)	NOT NULL,
-	`Field2`	VARCHAR(255)	NOT NULL
+	`github_id`	VARCHAR(255)	NOT NULL,
+	`blog_link`	VARCHAR(255)	NOT NULL,
+    PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `Company` (
+	`company_id`	INT	NOT NULL,
+	`company_name`	VARCHAR(255)	NOT NULL,
+    PRIMARY KEY (`company_id`)
 );
 
 CREATE TABLE `Lecture` (
@@ -20,7 +27,9 @@ CREATE TABLE `Lecture` (
 	`company_id`	VARCHAR(255)	NOT NULL,
 	`price`	VARCHAR(255)	NULL,
 	`discount_rate`	VARCHAR(255)	NULL,
-	`introduction`	TEXT	NULL
+	`introduction`	TEXT	NULL,
+    PRIMARY KEY (`lecture_id`),
+    FOREIGN KEY (`company_id`) REFERENCES `Company` (`company_id`)
 );
 
 CREATE TABLE `Review` (
@@ -31,36 +40,45 @@ CREATE TABLE `Review` (
 	`good_review`	TEXT	NOT NULL,
 	`bad_review`	TEXT	NOT NULL,
 	`is_active`	BOOL	NOT NULL	DEFAULT TRUE,
-	`created_at`	DATETIME	NOT NULL
-);
-
-CREATE TABLE `STACK_CATEGORY` (
-	`stack_category_id`	INT	NOT NULL,
-	`parent_id`	INT	NULL,
-	`Field`	INT	NOT NULL
-);
-
-CREATE TABLE `UserStack` (
-	`user_stack_id`	INT	NOT NULL,
-	`user_id`	INT	NOT NULL,
-	`stack_category_id`	INT	NOT NULL
-);
-
-CREATE TABLE `LectureStack` (
-	`lecture_stack_id`	INT	NOT NULL,
-	`stack_category_id`	INT	NOT NULL,
-	`lecture_id`	INT	NOT NULL
-);
-
-CREATE TABLE `Company` (
-	`company_id`	INT	NOT NULL,
-	`company_name`	VARCHAR(255)	NOT NULL
+	`created_at`	DATETIME	NOT NULL,
+    PRIMARY KEY (`review_id`),
+    FOREIGN KEY (`lecture_id`) REFERENCES `Lecture` (`lecture_id`),
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
 );
 
 CREATE TABLE `Bookmark` (
 	`bookmark_id`	INT	NOT NULL,
 	`user_id`	INT	NOT NULL,
-	`lecture_id`	INT	NOT NULL
+	`lecture_id`	INT	NOT NULL,
+    PRIMARY KEY (`bookmark_id`),
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`),  
+    FOREIGN KEY (`lecture_id`) REFERENCES `Lecture` (`lecture_id`)
+);
+
+CREATE TABLE `STACK_CATEGORY` (
+	`stack_category_id`	INT	NOT NULL,
+	`parent_id`	INT	NULL,
+	`Field`	INT	NOT NULL,
+    PRIMARY KEY (`stack_category_id`),
+    FOREIGN KEY (`parent_id`) REFERENCES `STACK_CATEGORY` (`stack_category_id`)
+);
+
+CREATE TABLE `LectureStack` (
+	`lecture_stack_id`	INT	NOT NULL,
+	`stack_category_id`	INT	NOT NULL,
+	`lecture_id`	INT	NOT NULL,
+    PRIMARY KEY (`lecture_stack_id`),
+    FOREIGN KEY (`stack_category_id`) REFERENCES `STACK_CATEGORY` (`stack_category_id`),
+    FOREIGN KEY (`lecture_id`) REFERENCES `Lecture` (`lecture_id`)
+);
+
+CREATE TABLE `UserStack` (
+	`user_stack_id`	INT	NOT NULL,
+	`user_id`	INT	NOT NULL,
+	`stack_category_id`	INT	NOT NULL,
+    PRIMARY KEY (`user_stack_id`),
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`),
+    FOREIGN KEY (`stack_category_id`) REFERENCES `STACK_CATEGORY` (`stack_category_id`)
 );
 
 CREATE TABLE `BOARD` (
@@ -68,42 +86,8 @@ CREATE TABLE `BOARD` (
 	`user_id`	INT	NOT NULL,
 	`title`	VARCHAR(255)	NOT NULL,
 	`created_at`	DATETIME	NOT NULL,
-	`is_active`	BOOL	NOT NULL	DEFAULT TRUE
+	`is_active`	BOOL	NOT NULL	DEFAULT TRUE,
+    `content`	TEXT	NOT NULL,
+    PRIMARY KEY (`board_id`),
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
 );
-
-ALTER TABLE `User` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
-	`user_id`
-);
-
-ALTER TABLE `Lecture` ADD CONSTRAINT `PK_LECTURE` PRIMARY KEY (
-	`lecture_id`
-);
-
-ALTER TABLE `Review` ADD CONSTRAINT `PK_REVIEW` PRIMARY KEY (
-	`review_id`
-);
-
-ALTER TABLE `STACK_CATEGORY` ADD CONSTRAINT `PK_STACK_CATEGORY` PRIMARY KEY (
-	`stack_category_id`
-);
-
-ALTER TABLE `UserStack` ADD CONSTRAINT `PK_USERSTACK` PRIMARY KEY (
-	`user_stack_id`
-);
-
-ALTER TABLE `LectureStack` ADD CONSTRAINT `PK_LECTURESTACK` PRIMARY KEY (
-	`lecture_stack_id`
-);
-
-ALTER TABLE `Company` ADD CONSTRAINT `PK_COMPANY` PRIMARY KEY (
-	`company_id`
-);
-
-ALTER TABLE `Bookmark` ADD CONSTRAINT `PK_BOOKMARK` PRIMARY KEY (
-	`bookmark_id`
-);
-
-ALTER TABLE `BOARD` ADD CONSTRAINT `PK_BOARD` PRIMARY KEY (
-	`board_id`
-);
-

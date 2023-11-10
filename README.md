@@ -1,8 +1,91 @@
-# Team-8
+### Rising Coder
 
-- 배포 링크
+- [웹 배포 링크]()
+- [서버 배포 링크](http://118.67.143.134:8080/)
 
-### 팀 소개
+## 주제
+
+## 구현 기능
+
+
+
+
+
+
+
+## 💻 Team 8 소개
+
+<table align="center" style = "table-layout: auto; width: 100%; table-layout: fixed;">
+  <tr>
+    <td>
+       <img width="200" src = "https://avatars.githubusercontent.com/u/75142329?v=4" />
+    </td>
+    <td>
+      <img width="200" src = "https://avatars.githubusercontent.com/u/78201530?v=4"/>
+    </td>
+        <td>
+      <img width="200" src = "https://avatars.githubusercontent.com/u/66587876?v=4"/>
+    </td>
+        <td>
+      <img width="200" src = "https://avatars.githubusercontent.com/u/109056278?v=4"/>
+    </td>
+  </tr> 
+  <tr>
+    <th align="center">권민재</th>
+    <th align="center">명재위</th>
+    <th align="center">박성철</th>
+    <th align="center">소효은</th>
+  </tr>
+  <tr>
+    <th align="center">KUCC</th>
+    <th align="center">KUCC</th>
+    <th align="center">KUCC</th>
+    <th align="center">YCC</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/mjkweon17">mjkweon17</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/JayMyong66">JayMyong66</a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/manu1307">manu1307</a>
+    </td>
+        <td align="center">
+      <a href="https://github.com/she0108">she0108</a>
+    </td>
+  </tr>
+  <tr>
+    <th align="center">Backend, CI/CD</th>
+    <th align="center">Frontend</th>
+    <th align="center">Frontend</th>
+    <th align="center">Web Crawling, Data Managing</th>
+  </tr>
+  <tr>
+    <th align="center" colspan="4">Project Planning</th>
+  </tr>
+</table>
+
+If you would like to contribute to this project or if you have any questions or need assistance, feel free to reach out to [mjkweon17](https://github.com/mjkweon17) for guidance.
+
+
+
+## 🛠 Frontend Tech Stack
+| Framework | React, Vite |
+|:---|:---|
+| Language | HTML, CSS, Javascript |
+| Deployment | Vercel |
+
+## 🛠 Backend Tech Stack
+| Framework | FastAPI |
+|:---|:---|
+| Language | Python 3.10 |
+| Database/ORM | MySQL, Naver Cloud Platform - Cloud DB for MySQL, SQLAlchemy |
+| CI/CD | Naver Cloud Platform - Server, Docker, Docker Hub, GitHub Actions |
+| ETC | Swagger, Notion, Figma, Discord, [ERDCloud](https://www.erdcloud.com/d/nSaQY4NjMcnwcQ3CM), MySQL Workbench |
+
+
 
 ### 개요
 

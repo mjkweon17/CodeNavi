@@ -8,7 +8,7 @@ CREATE TABLE `HKUser` (
 	`github_id`	VARCHAR(255)	NOT NULL,
 	`blog_link`	VARCHAR(255)	NOT NULL,
     PRIMARY KEY (`user_id`)
-);
+); 
 
 CREATE TABLE `HKCompany` (
 	`company_id`	INT	AUTO_INCREMENT	NOT NULL,
